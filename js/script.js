@@ -14,65 +14,65 @@ let leftCurrency = 'RUB';
 let rightCurrency = 'USD';
 
 
-leftInput.addEventListener('keyup', func);
 
 function func () {
     const inputValue = +leftInput.value.replace(",", ".");
-
     if (typeof (inputValue) == 'number' ) {
         let url = `https://api.exchangerate.host/latest?base=${leftCurrency}&symbols=${rightCurrency}`
         fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                leftP.textContent = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
-                rightInput.value = inputValue * data.rates[rightCurrency].toFixed(4);
-            })
-
+        .then(res => res.json())
+        .then(data => {
+            leftP.textContent = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
+            rightInput.value = inputValue * data.rates[rightCurrency].toFixed(4);
+        })
+        
         fetch(`https://api.exchangerate.host/latest?base=${rightCurrency}&symbols=${leftCurrency}`)
-            .then(res => res.json())
-            .then(data => {
-                rightP.textContent = `1 ${rightCurrency} = ${data.rates[leftCurrency]} ${leftCurrency}`;
-            })
+        .then(res => res.json())
+        .then(data => {
+            rightP.textContent = `1 ${rightCurrency} = ${data.rates[leftCurrency]} ${leftCurrency}`;
+        })
     }
 }
 
+leftInput.addEventListener('keyup', func);
+
 secondRub.addEventListener('click', () => {
-    rightCurrency = 'RUB';
+    rightCurrency = secondRub.textContent;
     func();
 });
 
 secondUsd.addEventListener('click', () => {
-    rightCurrency = 'USD';
+    rightCurrency = secondUsd.textContent;
     func();
 });
 
 secondEur.addEventListener('click', () => {
-    rightCurrency = 'EUR';
+    rightCurrency = secondEur.textContent;
     func();
 });
 
 secondGbp.addEventListener('click', () => {
-    rightCurrency = 'GBP';
+    rightCurrency = secondGbp.textContent;
     func();
 });
 
 firstRub.addEventListener('click', () => {
-    leftCurrency = 'RUB';
+    leftCurrency = firstRub.textContent;
     func();
 });
 
 
 firstUsd.addEventListener('click', () => {
-    leftCurrency = 'USD';
+    leftCurrency = firstUsd.textContent;
     func();
 });
 
 firstEur.addEventListener('click', () => {
-    leftCurrency = 'EUR';
+    leftCurrency = firstEur.textContent;
     func();
 });
 
 firstGbp.addEventListener('click', () => {
-    leftCurrency = 'GBP';
+    leftCurrency = firstGbp.textContent;
     func();
 });
