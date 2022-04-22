@@ -1,4 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 * {
-padding: 0px;
-margin: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.headerAll {
+    width: 100%;
+    background-color: #F5F5F6;
+}
+
+.header {
+    width: 83%;
+    display: flex;
+    margin: auto;
+    padding: 13px 0px;
+    justify-content: space-between;
+    background-color: #F5F5F6;
+}
+
+.headerList {
+    display: flex;
+    list-style: none;
+    padding: 6px;
+    width: 720px;
+}
+
+.headerList li {
+    padding: 0px 12px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 12px;
+    letter-spacing: 0.06em;
+}
+
+.header button {
+    font-size: 11px;
+}
+
+.main {
+    width: 50%;
+    margin: auto;
+}
+
+.valyutaList {
+    list-style: none;
+    display: flex;
+
+}
+
+.valyutaList li button {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.currencyBox p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    border: none;
+    width: 259px;
+
+}
+
+.inputBox {
+    border: 1px solid black;
+    width: 259px;
+}
+
+.currencyBoxes {
+    display: flex;
+    justify-content: space-between;
 }

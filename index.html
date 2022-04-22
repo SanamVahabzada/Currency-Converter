@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,65 @@
     <title>Currency Converter</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="container">
+        <header class="headerAll">
+            <div class="header">
+                <img src="./images/Asset.svg" alt="logo">
+                <ul class="headerList">
+                    <li>БАНК</li>
+                    <li>БИЗНЕС</li>
+                    <li>ИНВЕСТИЦИИ</li>
+                    <li>СТРАХОВАНИЕ</li>
+                    <li>МОБАЙЛ</li>
+                    <li>ПУТЕШЕСТВИЯ</li>
+                    <li>РАЗВЛЕЧЕНИЯ</li>
+                </ul>
+
+                <button>ВОЙТИ</button>
+            </div>
+        </header>
+        <main>
+            <div class="main">
+                <h1>Конвертер валют онлайн</h1>
+                <div class="currencyBoxes">
+                    <div class="currencyBox">
+                        <p>У меня есть </p>
+                        <ul class="valyutaList">
+                            <li><button class="firstRub">RUB</button></li>
+                            <li><button class="firstUsd">USD</button></li>
+                            <li><button class="firstEur">EUR</button></li>
+                            <li><button class="firstGbp">GBP</button></li>
+                        </ul>
+                        <div class="inputBox">
+                            <input class="leftInput" type="text">
+                            <p class="left-p">0</p>
+                        </div>
+                    </div>
+                    <div class="currencyBox">
+                        <p>У меня есть </p>
+                        <ul class="valyutaList">
+                            <li><button class="secondRub">RUB</button></li>
+                            <li><button class="secondUsd">USD</button></li>
+                            <li><button class="secondEur">EUR</button></li>
+                            <li><button class="secondGbp">GBP</button></li>
+                        </ul>
+                        <div class="inputBox">
+                            <input class="rightInput" type="text">
+                            <p class="right-p">0</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
 
 
     <script src="/js/script.js"></script>
 </body>
+
 </html>
