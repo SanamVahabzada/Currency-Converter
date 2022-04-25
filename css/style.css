@@ -4,38 +4,59 @@
     padding: 0px;
     margin: 0px;
     font-family: Roboto, sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-}
-
-.headerAll {
     width: 100%;
-    background-color: #F5F5F6;
 }
 
 .header {
-    width: 83%;
+    width: 100%;
+    /* background-color: #F5F5F6; */
+    background-color: aliceblue;
     display: flex;
-    margin: auto;
-    padding: 13px 0px;
     justify-content: space-between;
-    background-color: #F5F5F6;
+    margin: 0px auto 57px;
+    padding: 12px 0px;
+}
+
+
+.imgDiv {
+    width: 10%;
+    padding-left: 100px;
+}
+
+.listDiv {
+    width: 10%;
 }
 
 .headerList {
-    display: flex;
+    /* width: 100%; */
     list-style: none;
+    display: flex;
+    justify-content: space-around;
     padding: 6px;
-    width: 720px;
+    /* width: 75%; */
 }
+
+.btnDiv {
+    width: 10%;
+}
+
+/* .header {
+    width: 100% ;
+    display: flex;
+    margin: 0px auto 57px;
+    padding: 13px 0px;
+    justify-content: space-between;
+    /* background-color: #F5F5F6; 
+}*/
 
 .headerList li {
     padding: 0px 12px;
     font-weight: 500;
-    font-size: 11px;
+    font-size: 0.9vw;
     line-height: 12px;
     letter-spacing: 0.06em;
 }
@@ -45,13 +66,15 @@
 }
 
 .main {
-    width: 50%;
-    margin: auto;
+    width: 55.5%;
+    margin-left: 253px;
 }
 
 .valyutaList {
     list-style: none;
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 19px;
 
 }
 
@@ -59,6 +82,9 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+    width: 63.81px;
+    height: 28px;
+    border: 1px solid #E5E5E5;
 }
 
 .currencyBox p {
@@ -72,16 +98,28 @@ input {
     font-size: 36px;
     line-height: 42px;
     border: none;
-    width: 259px;
-
+    width: 240px;
+    margin-bottom: 35px;
 }
 
 .inputBox {
     border: 1px solid black;
     width: 259px;
+    height: 102px;
+    padding-left: 15px;
 }
 
 .currencyBoxes {
     display: flex;
     justify-content: space-between;
 }
+
+main h1 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 28px;
+}
+
+
+@media screen {}

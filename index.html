@@ -11,10 +11,11 @@
 
 <body>
     <div class="container">
-        <header class="headerAll">
+        
             <div class="header">
-                <img src="./images/Asset.svg" alt="logo">
-                <ul class="headerList">
+              <div class="imgDiv"> <img src="./images/Asset.svg" alt="logo"></div> 
+                <div class="listDiv">
+              <ul class="headerList">
                     <li>БАНК</li>
                     <li>БИЗНЕС</li>
                     <li>ИНВЕСТИЦИИ</li>
@@ -23,15 +24,17 @@
                     <li>ПУТЕШЕСТВИЯ</li>
                     <li>РАЗВЛЕЧЕНИЯ</li>
                 </ul>
-
+            </div>
+                <div class="btnDiv">
                 <button>ВОЙТИ</button>
             </div>
-        </header>
+            </div>
+        
         <main>
             <div class="main">
                 <h1>Конвертер валют онлайн</h1>
                 <div class="currencyBoxes">
-                    <div class="currencyBox">
+                    <div class="currencyBox" id="snm">
                         <p>У меня есть </p>
                         <ul class="valyutaList">
                             <li><button class="firstRub">RUB</button></li>
@@ -45,7 +48,7 @@
                         </div>
                     </div>
                     <div class="currencyBox">
-                        <p>У меня есть </p>
+                        <p>Хочу приобрести </p>
                         <ul class="valyutaList">
                             <li><button class="secondRub">RUB</button></li>
                             <li><button class="secondUsd">USD</button></li>

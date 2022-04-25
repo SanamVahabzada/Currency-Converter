@@ -23,7 +23,7 @@ function func () {
         .then(res => res.json())
         .then(data => {
             leftP.textContent = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
-            rightInput.value = inputValue * data.rates[rightCurrency].toFixed(4);
+            rightInput.value =    parseFloat(inputValue * data.rates[rightCurrency]).toFixed(4);
         })
         
         fetch(`https://api.exchangerate.host/latest?base=${rightCurrency}&symbols=${leftCurrency}`)
