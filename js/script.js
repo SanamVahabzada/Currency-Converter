@@ -1,78 +1,64 @@
-let firstRub = document.querySelector(".firstRub");
-let firstUsd = document.querySelector(".firstUsd");
-let firstEur = document.querySelector(".firstEur");
-let firstGbp = document.querySelector(".firstGbp");
-let secondRub = document.querySelector(".secondRub");
-let secondUsd = document.querySelector(".secondUsd");
-let secondEur = document.querySelector(".secondEur");
-let secondGbp = document.querySelector(".secondGbp");
 let leftP = document.querySelector('.left-p');
 let leftInput = document.querySelector(".leftInput");
 let rightInput = document.querySelector(".rightInput");
 let rightP = document.querySelector('.right-p');
+let leftList = document.querySelector(".left").children;
+let rightList = document.querySelector(".right").children;
+
+
 let leftCurrency = 'RUB';
 let rightCurrency = 'USD';
 
-
-
-function func () {
-    const inputValue = +leftInput.value.replace(",", ".");
-    if (typeof (inputValue) == 'number' ) {
-        let url = `https://api.exchangerate.host/latest?base=${leftCurrency}&symbols=${rightCurrency}`
-        fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            leftP.textContent = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
-            rightInput.value =    parseFloat(inputValue * data.rates[rightCurrency]).toFixed(4);
-        })
-        
-        fetch(`https://api.exchangerate.host/latest?base=${rightCurrency}&symbols=${leftCurrency}`)
-        .then(res => res.json())
-        .then(data => {
-            rightP.textContent = `1 ${rightCurrency} = ${data.rates[leftCurrency]} ${leftCurrency}`;
-        })
-    }
-}
+console.log(leftList.firstChild)
 
 leftInput.addEventListener('keyup', func);
 
-secondRub.addEventListener('click', () => {
-    rightCurrency = secondRub.textContent;
-    func();
-});
+for (let i = 0; i < leftList.length; i++) {
+    console.log(leftList[i].firstChild)
+    leftList[i].firstChild.addEventListener('click', function (e) {
 
-secondUsd.addEventListener('click', () => {
-    rightCurrency = secondUsd.textContent;
-    func();
-});
+        leftCurrency = leftList[i].firstChild.textContent;
 
-secondEur.addEventListener('click', () => {
-    rightCurrency = secondEur.textContent;
-    func();
-});
+        for (let s = 0; s < leftList.length; s++) {
+            leftList[s].firstChild.classList.remove("selected")
+        }
+        e.target.classList.add('selected')
 
-secondGbp.addEventListener('click', () => {
-    rightCurrency = secondGbp.textContent;
-    func();
-});
-
-firstRub.addEventListener('click', () => {
-    leftCurrency = firstRub.textContent;
-    func();
-});
+        func();
+    })
+}
 
 
-firstUsd.addEventListener('click', () => {
-    leftCurrency = firstUsd.textContent;
-    func();
-});
+for (let i = 0; i < rightList.length; i++) {
+    rightList[i].firstChild.addEventListener('click', function (e) {
 
-firstEur.addEventListener('click', () => {
-    leftCurrency = firstEur.textContent;
-    func();
-});
+        rightCurrency = rightList[i].firstChild.textContent;
 
-firstGbp.addEventListener('click', () => {
-    leftCurrency = firstGbp.textContent;
-    func();
-});
+        for (let s = 0; s < rightList.length; s++) {
+            rightList[s].firstChild.classList.remove("selected")
+        }
+        e.target.classList.add('selected')
+
+        func();
+    })
+}
+
+function func() {
+  
+    const inputValue = +leftInput.value.replace(",", ".");
+    if (typeof (inputValue) == 'number') {
+        let url = `https://api.exchangerate.host/latest?base=${leftCurrency}&symbols=${rightCurrency}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                leftP.textContent = `1 ${leftCurrency} = ${data.rates[rightCurrency]} ${rightCurrency}`;
+                rightInput.value = parseFloat(inputValue * data.rates[rightCurrency]).toFixed(4);
+            })
+
+        fetch(`https://api.exchangerate.host/latest?base=${rightCurrency}&symbols=${leftCurrency}`)
+            .then(res => res.json())
+            .then(data => {
+                rightP.textContent = `1 ${rightCurrency} = ${data.rates[leftCurrency]} ${leftCurrency}`;
+            })
+    }
+}

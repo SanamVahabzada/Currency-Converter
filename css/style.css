@@ -6,7 +6,9 @@
     font-family: Roboto, sans-serif;
     box-sizing: border-box;
 }
-
+.selected{
+    background: #833AE0;
+}
 .container {
     width: 100%;
 }
@@ -100,6 +102,10 @@ input {
     border: none;
     width: 240px;
     margin-bottom: 35px;
+}
+
+input:focus {
+    outline: none;
 }
 
 .inputBox {
